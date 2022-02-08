@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: PekoraCustomEmotes
+  m_EditorClassIdentifier: 
+  controls:
+  - name: Cluck
+    icon: {fileID: 0}
+    type: 101
+    parameter:
+      name: VRCEmote
+    value: 18
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: BunnyHop
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: VRCEmote
+    value: 19
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Bring it
+    icon: {fileID: 0}
+    type: 101
+    parameter:
+      name: VRCEmote
+    value: 20
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Cheer
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: VRCEmote
+    value: 21
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Crying
+    icon: {fileID: 0}
+    type: 101
+    parameter:
+      name: VRCEmote
+    value: 22
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Hurray
+    icon: {fileID: 0}
+    type: 101
+    parameter:
+      name: VRCEmote
+    value: 23
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Daydream
+    icon: {fileID: 0}
+    type: 101
+    parameter:
+      name: VRCEmote
+    value: 24
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: ThumbsUp
+    icon: {fileID: 0}
+    type: 101
+    parameter:
+      name: VRCEmote
+    value: 25
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
