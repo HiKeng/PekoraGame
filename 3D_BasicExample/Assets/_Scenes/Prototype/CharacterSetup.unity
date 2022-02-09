@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1091391361410905644, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.93
+      value: 0.421
       objectReference: {fileID: 0}
     - target: {fileID: 1091391361410905644, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: m_LocalPosition.y
@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1091391361410905644, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.15
+      value: 2.169
       objectReference: {fileID: 0}
     - target: {fileID: 1091391361410905644, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: m_LocalRotation.w
@@ -465,9 +465,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2072523136341829422, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: m_Elasticity
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5432238837372844384, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: m_Name
       value: Pekora_PlayerController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496924180103973963, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7731968657363422870, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: targetCamera
@@ -1566,13 +1574,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697609371}
-  m_LocalRotation: {x: 0.11876341, y: -0, z: -0, w: 0.9929226}
-  m_LocalPosition: {x: 2.99, y: 1.92, z: 1.55}
+  m_LocalRotation: {x: 0.19358791, y: -0, z: -0, w: 0.981083}
+  m_LocalPosition: {x: 0.457, y: 1.95, z: 0.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 13.641, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 22.324, y: 0, z: 0}
 --- !u!1 &2044063836
 GameObject:
   m_ObjectHideFlags: 0
