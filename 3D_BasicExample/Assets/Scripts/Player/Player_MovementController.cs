@@ -7,10 +7,14 @@ public class Player_MovementController : MonoBehaviour
 {
     public GameObject targetCamera;
     public Rigidbody physicsSystem;
+    public Animator animatorSystem;
 
     public float movementSpeed = 10.0f;
     public float turnSpeed = 10.0f;
     public float jumpPower = 10.0f;
+    bool onAttacking = false;
+    bool onJumping = false;
+
 
     void Start()
     {
@@ -19,8 +23,15 @@ public class Player_MovementController : MonoBehaviour
 
     void Update()
     {
-        Update_Movement();
+        if(onAttacking == false) // Cannot move when this character still attacking.
+        {
+            Update_Movement();
+            Update_Attacking();
+        }
+
+        Update_Attacking();
         Update_JumpMovement();
+        Update_Animation();
     }
 
     void Update_Movement()
@@ -71,5 +82,63 @@ public class Player_MovementController : MonoBehaviour
         {
             physicsSystem.AddForce(new Vector3(0, jumpPower, 0));
         }
+    }
+
+    private void Update_Attacking()
+    {
+        if(Input.GetButtonDown("Fire1") == true) // Fire1 is Left mouse click.
+        {
+            if(onAttacking == false)
+            {
+                Start_AttackingState();
+                animatorSystem.SetTrigger("DoAttacking");
+            }
+        }
+    }
+
+    private void Update_Animation()
+    {
+        float currentSpeed = physicsSystem.velocity.magnitude;
+        animatorSystem.SetFloat("CurrentVelocity", currentSpeed);
+    }
+
+    public void Start_AttackingState()
+    {
+        onAttacking = true; // Set Attacking state to true.
+        physicsSystem.velocity = Vector3.zero;
+    }
+
+    public void End_AttackingState()
+    {
+        onAttacking = false; // Set Attacking state to false.
+    }
+
+    private void OnCollisionEnter(Collision hitWithObject)
+    {
+        Vector3 playerPosition = gameObject.transform.position + new Vector3(0, 1, 0);
+        Vector3 contactPoint = Get_CenterOfContactPoint(hitWithObject);
+
+        if(playerPosition.y >= contactPoint.y) // If contact point is below the player. It means it should contact ground.
+        {
+            onJumping = false;
+        }
+    }
+
+    Vector3 Get_CenterOfContactPoint(Collision hitWithObject)
+    {
+        // Get Average Position of Contact Points. Sum them all and divide by how many of them.
+
+        Vector3 centerOfContactPoint = new Vector3(0, 0, 0);
+        ContactPoint[] contactPointList = new ContactPoint[hitWithObject.contactCount]; // Create an Array to keep all contact points.
+        hitWithObject.GetContacts(contactPointList);    // Get All contact points and set it into contactPointList.
+
+        for (int index = 0; index < contactPointList.Length; index += 1)
+        {
+            centerOfContactPoint += contactPointList[index].point; // Sum all contant points location together.
+        }
+
+        centerOfContactPoint = centerOfContactPoint / hitWithObject.contactCount; // Calculate Average of them to find center.
+
+        return centerOfContactPoint;
     }
 }
