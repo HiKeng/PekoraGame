@@ -734,7 +734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1929738116
 Transform:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ MonoBehaviour:
   cameraHorizontalSpeed: 1
   cameraVerticalSpeed: 1
   cameraMaximumVerticalAngle: 80
-  cameraMinimumVertialAngle: -10
+  cameraMinimumVerticalAngle: -10
 --- !u!114 &1929738120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,6 +812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 371818085}
   physicsSystem: {fileID: 1929738117}
+  animatorSystem: {fileID: 0}
   movementSpeed: 10
   turnSpeed: 10
   jumpPower: 500
