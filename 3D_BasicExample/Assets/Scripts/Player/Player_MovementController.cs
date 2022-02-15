@@ -14,8 +14,7 @@ public class Player_MovementController : MonoBehaviour
     public float jumpPower = 10.0f;
     bool onAttacking = false;
     bool onJumping = false;
-
-
+    
     void Start()
     {
         
