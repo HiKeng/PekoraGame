@@ -14,6 +14,10 @@ public class Player_MovementController : MonoBehaviour
     public float jumpPower = 10.0f;
     bool onAttacking = false;
     bool onJumping = false;
+
+    float _delayedVelocityUpdate = 0;
+    [SerializeField] float _velocityUpdateDelayTime = 0.5f;
+    [SerializeField] float _animationLerpSpeed = 3;
     
     void Start()
     {
@@ -22,22 +26,23 @@ public class Player_MovementController : MonoBehaviour
 
     void Update()
     {
-        if(onAttacking == false) // Cannot move when this character still attacking.
+        if(!onAttacking) // Cannot move when this character still attacking.
         {
             Update_Movement();
-            Update_Attacking();
+            //Update_Attacking();
         }
 
-        Update_Attacking();
         Update_JumpMovement();
         Update_Animation();
+
+        Debug.Log(animatorSystem.GetFloat("VelocityLerp"));
     }
 
     void Update_Movement()
     {
         Vector3 resultVelocity = new Vector3(0, physicsSystem.velocity.y, 0);
 
-        if(Input.GetKey(KeyCode.W) == true)
+        if (Input.GetKey(KeyCode.W))
         {
             resultVelocity += targetCamera.transform.forward * movementSpeed;
         }
@@ -72,6 +77,27 @@ public class Player_MovementController : MonoBehaviour
             Quaternion toQuaternion = gameObject.transform.rotation; // Rotation after Look At
 
             gameObject.transform.rotation = Quaternion.Lerp(fromQuaterion, toQuaternion, turnSpeed * Time.deltaTime);
+            _UpdateVelocityLerp(true);
+        }
+        else
+        {
+            _UpdateVelocityLerp(false);
+        }
+    }
+
+    private void _UpdateVelocityLerp(bool _isMove)
+    {
+        int _multiplier = _isMove ? 1 : -1;
+
+        animatorSystem.SetFloat("VelocityLerp", animatorSystem.GetFloat("VelocityLerp") + Time.deltaTime * _animationLerpSpeed * _multiplier);
+
+        if (animatorSystem.GetFloat("VelocityLerp") > 1)
+        {
+            animatorSystem.SetFloat("VelocityLerp", 1);
+        }
+        else if (animatorSystem.GetFloat("VelocityLerp") < 0)
+        {
+            animatorSystem.SetFloat("VelocityLerp", 0);
         }
     }
 
@@ -99,6 +125,15 @@ public class Player_MovementController : MonoBehaviour
     {
         float currentSpeed = physicsSystem.velocity.magnitude;
         animatorSystem.SetFloat("CurrentVelocity", currentSpeed);
+
+        StartCoroutine(DelayedUpdateVelocity(currentSpeed));
+    }
+
+    IEnumerator DelayedUpdateVelocity(float _currentVelocity)
+    {
+        yield return new WaitForSeconds(_velocityUpdateDelayTime);
+
+        _delayedVelocityUpdate = _currentVelocity;
     }
 
     public void Start_AttackingState()

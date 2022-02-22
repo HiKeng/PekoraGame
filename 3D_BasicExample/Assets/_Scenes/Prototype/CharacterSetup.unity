@@ -2267,7 +2267,7 @@ MonoBehaviour:
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
+  m_VolumeTrigger: {fileID: 1822228029}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
   m_Antialiasing: 0
@@ -2338,12 +2338,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697609371}
   m_LocalRotation: {x: 0.19358791, y: -0, z: -0, w: 0.981083}
-  m_LocalPosition: {x: 0.457, y: 1.95, z: 0.83}
+  m_LocalPosition: {x: -1.595, y: 2.079, z: -2.725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 22.324, y: 0, z: 0}
+--- !u!4 &1822228029 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1091391361410905644, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+  m_PrefabInstance: {fileID: 2126531917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2044063836
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,6 +2508,22 @@ PrefabInstance:
       propertyPath: targetCamera
       value: 
       objectReference: {fileID: 1697609371}
+    - target: {fileID: 7731968657363422870, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: movementSpeed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731968657363422870, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _animationLerpSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731968657363422870, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _animationLerpDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731968657363422870, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _velocityUpdateDelayTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7926987961419676184, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: targetCamera
       value: 
@@ -2573,6 +2594,8 @@ MonoBehaviour:
   movementSpeed: 10
   turnSpeed: 10
   jumpPower: 500
+  _velocityUpdateDelayTime: 0.5
+  _animationLerpSpeed: 3
 --- !u!114 &5699290403899326701
 MonoBehaviour:
   m_ObjectHideFlags: 0
