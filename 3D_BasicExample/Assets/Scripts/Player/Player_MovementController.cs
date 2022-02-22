@@ -29,13 +29,11 @@ public class Player_MovementController : MonoBehaviour
         if(!onAttacking) // Cannot move when this character still attacking.
         {
             Update_Movement();
-            //Update_Attacking();
+            Update_Attacking();
         }
 
         Update_JumpMovement();
         Update_Animation();
-
-        Debug.Log(animatorSystem.GetFloat("VelocityLerp"));
     }
 
     void Update_Movement()
@@ -77,6 +75,7 @@ public class Player_MovementController : MonoBehaviour
             Quaternion toQuaternion = gameObject.transform.rotation; // Rotation after Look At
 
             gameObject.transform.rotation = Quaternion.Lerp(fromQuaterion, toQuaternion, turnSpeed * Time.deltaTime);
+
             _UpdateVelocityLerp(true);
         }
         else
@@ -115,6 +114,7 @@ public class Player_MovementController : MonoBehaviour
         {
             if(onAttacking == false)
             {
+                Debug.Log("Attack");
                 Start_AttackingState();
                 animatorSystem.SetTrigger("DoAttacking");
             }
