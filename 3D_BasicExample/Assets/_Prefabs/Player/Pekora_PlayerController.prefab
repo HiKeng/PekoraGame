@@ -760,7 +760,7 @@ MonoBehaviour:
   textStyle: 1
   textStyleColor: {r: 0, g: 0, b: 0, a: 1}
   defaultUseMessage: (spacebar to interact)
-  useKey: 32
+  useKey: 101
   useButton: Fire2
   enableTouch: 0
   touchArea:
