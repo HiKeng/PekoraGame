@@ -955,9 +955,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543450653633523435}
     m_Modifications:
+    - target: {fileID: 136944, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 140896, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_Name
       value: Basic Standard Usable UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 161666, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183864, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402026, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
+      propertyPath: inRangeColor.b
+      value: 0.5566038
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402026, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
+      propertyPath: inRangeColor.g
+      value: 0.25414738
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402026, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
+      propertyPath: inRangeColor.r
+      value: 0.36801013
       objectReference: {fileID: 0}
     - target: {fileID: 22412950, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_Pivot.x
@@ -1005,7 +1029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22412950, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.38255
+      value: 0.953
       objectReference: {fileID: 0}
     - target: {fileID: 22412950, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1029,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22412950, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.1442
+      value: 2.514
       objectReference: {fileID: 0}
     - target: {fileID: 22412950, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1053,27 +1077,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22485502, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22485502, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22485502, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 22485502, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 22485502, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 22485502, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 22488158, guid: 3b6bd600f1610bb4685a5f32959f0fae, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1379,7 +1403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4069186062550313975, guid: 826dc099b87e77b4d9e30ffc2087ec39, type: 3}
       propertyPath: m_Text
-      value: 
+      value: Input Field
       objectReference: {fileID: 0}
     - target: {fileID: 4069186062653811953, guid: 826dc099b87e77b4d9e30ffc2087ec39, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1606,6 +1630,10 @@ PrefabInstance:
       value: Dialogue Manager
       objectReference: {fileID: 0}
     - target: {fileID: 4069186063651001929, guid: 826dc099b87e77b4d9e30ffc2087ec39, type: 3}
+      propertyPath: displaySettings.dialogueUI
+      value: 
+      objectReference: {fileID: 190722, guid: 90632d3b48c4c204a8745ed54bc1f708, type: 3}
+    - target: {fileID: 4069186063651001929, guid: 826dc099b87e77b4d9e30ffc2087ec39, type: 3}
       propertyPath: displaySettings.cameraSettings.cameraAngles
       value: 
       objectReference: {fileID: 0}
@@ -1675,7 +1703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4069186064130624684, guid: 826dc099b87e77b4d9e30ffc2087ec39, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 4069186064147483616, guid: 826dc099b87e77b4d9e30ffc2087ec39, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5344,6 +5372,10 @@ PrefabInstance:
     - target: {fileID: 5496924180111467519, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.028146826
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731968657363422870, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: jumpPower
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7731968657363422870, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: targetCamera

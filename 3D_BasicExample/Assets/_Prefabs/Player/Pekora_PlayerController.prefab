@@ -614,6 +614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1091391361410905644}
+  - component: {fileID: 9210640963211972069}
   - component: {fileID: 8458290159470112419}
   - component: {fileID: 4150584142713353771}
   - component: {fileID: 3373707840820179016}
@@ -646,6 +647,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &9210640963211972069
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432238837372844384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 4c46dea9a0975474eac61a7bbe2e7c2d, type: 3}
+  m_Controller: {fileID: 9100000, guid: 848ac48440eef7e418f325416d614e3c, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!136 &8458290159470112419
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -720,7 +740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 0}
   physicsSystem: {fileID: 3373707840820179016}
-  animatorSystem: {fileID: 5496924180103973963}
+  animatorSystem: {fileID: 9210640963211972069}
   movementSpeed: 10
   turnSpeed: 10
   jumpPower: 500
@@ -819,9 +839,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7731968657363422870}
-          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-          m_MethodName: set_enabled
-          m_Mode: 6
+          m_TargetAssemblyTypeName: Player_MovementController, Assembly-CSharp
+          m_MethodName: _DisableControl
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1188,7 +1208,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5496924180111467055}
-  - component: {fileID: 5496924180103973963}
   - component: {fileID: 3195192307077186938}
   - component: {fileID: 7599366765300419226}
   m_Layer: 0
@@ -1214,25 +1233,6 @@ Transform:
   m_Father: {fileID: 817692695859792121}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5496924180103973963
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5496924180111375887}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4c46dea9a0975474eac61a7bbe2e7c2d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 848ac48440eef7e418f325416d614e3c, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3195192307077186938
 MonoBehaviour:
   m_ObjectHideFlags: 0

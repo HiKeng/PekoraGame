@@ -175,4 +175,10 @@ public class Player_MovementController : MonoBehaviour
 
         return centerOfContactPoint;
     }
+
+    public void _DisableControl()
+    {
+        physicsSystem.velocity = Vector3.zero;
+        this.enabled = false;
+    }
 }

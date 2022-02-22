@@ -223,15 +223,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Audio(HAHAHA)
+        value: 'Audio(HAHAHA);
+
+          Delay(3)'
         type: 0
         typeString: 
       - title: Response Menu Sequence
-        value: 'Camera(Closeup,speaker,1);
-
-          Camera(Closeup,listener)@{{end}};
-
-          {{default}}'
+        value: '{{default}}'
         type: 0
         typeString: 
       conversationID: 1
@@ -268,7 +266,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 31
-        y: 94
+        y: 95
         width: 160
         height: 30
     - id: 2
@@ -298,7 +296,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: Timeline(play,TestTimeline)
+        value: 'Timeline(play,TestTimeline);
+
+          AnimatorTrigger(Emote_HAHAHA,
+          speaker)'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 1
@@ -463,9 +464,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(original,,1)
+        value: 'Camera(original,,1);
 
-          Camera(Torso,,3)'
+          Delay(3)'
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
         type: 0
         typeString: 
       conversationID: 1
@@ -700,8 +705,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 23.297865, y: 83.72338}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 15.210119, y: 81.37646}
+    canvasZoom: 1.1199999
   - id: 2
     fields:
     - title: Title
