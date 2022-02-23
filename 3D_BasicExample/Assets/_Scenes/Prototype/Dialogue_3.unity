@@ -3864,7 +3864,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697609371}
   m_LocalRotation: {x: 0.19358791, y: -0, z: -0, w: 0.981083}
-  m_LocalPosition: {x: -1.595, y: 2.079, z: -2.725}
+  m_LocalPosition: {x: -1.595, y: 2.255, z: -3.407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5387,7 +5387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7731968657363422870, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: _animationLerpSpeed
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7731968657363422870, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: _animationLerpDuration
