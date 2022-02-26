@@ -1630,9 +1630,13 @@ PrefabInstance:
       value: Dialogue Manager
       objectReference: {fileID: 0}
     - target: {fileID: 4069186063651001929, guid: 826dc099b87e77b4d9e30ffc2087ec39, type: 3}
+      propertyPath: initialDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 848d84260e1e64e42bb384faf5122d10, type: 2}
+    - target: {fileID: 4069186063651001929, guid: 826dc099b87e77b4d9e30ffc2087ec39, type: 3}
       propertyPath: displaySettings.dialogueUI
       value: 
-      objectReference: {fileID: 190722, guid: 90632d3b48c4c204a8745ed54bc1f708, type: 3}
+      objectReference: {fileID: 190722, guid: 2eb53742a2f4de44e99447e7bf5b8474, type: 3}
     - target: {fileID: 4069186063651001929, guid: 826dc099b87e77b4d9e30ffc2087ec39, type: 3}
       propertyPath: displaySettings.cameraSettings.cameraAngles
       value: 
