@@ -26,9 +26,10 @@ public class Player_MovementController : MonoBehaviour
 
     void Update()
     {
-        if(!onAttacking) // Cannot move when this character still attacking.
+        Update_Movement();
+
+        if (!onAttacking) // Cannot move when this character still attacking.
         {
-            Update_Movement();
             Update_Attacking();
         }
 
@@ -117,6 +118,15 @@ public class Player_MovementController : MonoBehaviour
                 Debug.Log("Attack");
                 Start_AttackingState();
                 animatorSystem.SetTrigger("DoAttacking");
+
+                if(animatorSystem.GetInteger("AttackIndex") >= 2)
+                {
+                    animatorSystem.SetInteger("AttackIndex", 1);
+                }
+                else
+                {
+                    animatorSystem.SetInteger("AttackIndex", animatorSystem.GetInteger("AttackIndex") + 1);
+                }
             }
         }
     }
@@ -139,7 +149,7 @@ public class Player_MovementController : MonoBehaviour
     public void Start_AttackingState()
     {
         onAttacking = true; // Set Attacking state to true.
-        physicsSystem.velocity = Vector3.zero;
+        //physicsSystem.velocity = Vector3.zero;
     }
 
     public void End_AttackingState()

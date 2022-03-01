@@ -7,6 +7,6 @@ public class SO_HurtBox : ScriptableObject
 {
     public float _damage = 10;
 
-    public GameObject _Senter;
-    public GameObject _Receiver;
+    [HideInInspector] public GameObject _Senter;
+    [HideInInspector] public GameObject _Receiver;
 }
