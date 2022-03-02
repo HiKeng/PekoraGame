@@ -6,6 +6,10 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] bool _isPause = false;
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.P))

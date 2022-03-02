@@ -922,9 +922,6 @@ AnimatorStateMachine:
     m_State: {fileID: 5879882094168866819}
     m_Position: {x: 330, y: 110, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 7835868808227379272}
-    m_Position: {x: 470, y: 20, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 2491179170853500392}
     m_Position: {x: 330, y: 190, z: 0}
   m_ChildStateMachines: []
@@ -932,10 +929,10 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_AnyStatePosition: {x: 80, y: 150, z: 0}
+  m_EntryPosition: {x: 350, y: 30, z: 0}
+  m_ExitPosition: {x: 590, y: 150, z: 0}
+  m_ParentStateMachinePosition: {x: 790, y: 140, z: 0}
   m_DefaultState: {fileID: 5879882094168866819}
 --- !u!1101 &7281619947993435423
 AnimatorStateTransition:
@@ -988,32 +985,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 80, y: 210, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -9220669978318596732}
---- !u!1102 &7835868808227379272
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WpAttack_Hand_2L
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3f5af7597f38cb7459fca1062f257f76, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!114 &7890876046247380864
 MonoBehaviour:
   m_ObjectHideFlags: 1
