@@ -22,6 +22,8 @@ public class Player_Camera : MonoBehaviour
     Vector3 cameraLocationOffset = new Vector3(0, 0, 0);
     Vector3 cameraRotationOffset = new Vector3(0, 0, 0);
 
+    [SerializeField] bool _isFreeze = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,11 +47,26 @@ public class Player_Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _mouseDisable();
+
+        //
+
         Update_MouseHorizontalMovement();
         Update_MouseVerticalMovement();
 
         Update_CalculateCameraOffset();
         Update_CameraCollision();
+    }
+
+    void _mouseDisable()
+    {
+        Cursor.visible = _isFreeze;
+        Screen.lockCursor = _isFreeze;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _isFreeze = !_isFreeze;
+        }
     }
 
     void Update_MouseHorizontalMovement()
