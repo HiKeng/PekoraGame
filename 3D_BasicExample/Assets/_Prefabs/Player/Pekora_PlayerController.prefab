@@ -780,7 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitBox: {fileID: 6994651813223268592}
-  _drawGizmos: 1
+  _drawGizmos: 0
 --- !u!114 &4871689688974182599
 MonoBehaviour:
   m_ObjectHideFlags: 0
