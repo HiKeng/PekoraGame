@@ -3144,7 +3144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1528262849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6530,7 +6530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: 32
+  trigger: 16
   condition:
     luaConditions: []
     questConditions: []
@@ -6545,9 +6545,11 @@ MonoBehaviour:
   questEntryNumber: 1
   questEntryState: 0
   luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
+  sequence: 'Fade(in,10);
+
+    Delay(3)'
+  sequenceSpeaker: {fileID: 543450653633523435}
+  sequenceListener: {fileID: 1822228029}
   waitOneFrameOnStartOrEnable: 1
   alertMessage: 
   textTable: {fileID: 0}
