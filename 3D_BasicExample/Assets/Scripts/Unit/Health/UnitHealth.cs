@@ -11,8 +11,8 @@ public class UnitHealth : MonoBehaviour
     [SerializeField] bool _isDead = false;
 
     [Header("Events")]
-    [SerializeField] UnityEvent _onTakeDamage;
-    [SerializeField] UnityEvent _onDead;
+    public  UnityEvent _onTakeDamage;
+    public UnityEvent _onDead;
 
     protected virtual void Start()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 public class HurtBox : MonoBehaviour
@@ -14,6 +15,9 @@ public class HurtBox : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] bool _showGizmos = false;
+
+    [Header("Events")]
+    public UnityEvent _onHit;
 
     #endregion
 
@@ -65,6 +69,8 @@ public class HurtBox : MonoBehaviour
         _hurtBoxSO._Receiver = other.gameObject;
 
         _alreadyHitList.Add(other.gameObject);
+
+        _onHit.Invoke();
     }
 
     public bool IsInLayerMask(GameObject obj, LayerMask layerMask)
