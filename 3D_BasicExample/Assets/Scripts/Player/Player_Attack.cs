@@ -11,6 +11,11 @@ public class Player_Attack : MonoBehaviour
     [Header("Debug")]
     [SerializeField] bool _drawGizmos;
 
+    [Header("Events")]
+    public UnityEvent _onStartAttack1;
+    public UnityEvent _onStartAttack2;
+    public UnityEvent _onHit;
+
     public void _SetHitBoxActive(bool _isActive)
     {
         _hitBox.enabled = _isActive;

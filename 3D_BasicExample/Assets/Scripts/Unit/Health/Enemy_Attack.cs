@@ -59,8 +59,6 @@ public class Enemy_Attack : MonoBehaviour
 
     void _detectTarget(GameObject _target)
     {
-        //if(_lockOnTarget != null) { return; }
-
         _lockOnTarget = _target;
     }
 
@@ -145,7 +143,7 @@ public class Enemy_Attack : MonoBehaviour
 
     bool _CheckOtherIsTargetToFight(GameObject _target)
     {
-        return _target.GetComponent<Player_MovementController>() != null;
+        return _target.GetComponent<Player_MovementController>() != null || _target.GetComponent<BuildingHealth>() != null;
     }
 
     #endregion

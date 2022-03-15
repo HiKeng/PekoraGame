@@ -122,10 +122,12 @@ public class Player_MovementController : MonoBehaviour
                 if(animatorSystem.GetInteger("AttackIndex") >= 2)
                 {
                     animatorSystem.SetInteger("AttackIndex", 1);
+                    GetComponent<Player_Attack>()._onStartAttack1.Invoke();
                 }
                 else
                 {
                     animatorSystem.SetInteger("AttackIndex", animatorSystem.GetInteger("AttackIndex") + 1);
+                    GetComponent<Player_Attack>()._onStartAttack2.Invoke();
                 }
             }
         }
