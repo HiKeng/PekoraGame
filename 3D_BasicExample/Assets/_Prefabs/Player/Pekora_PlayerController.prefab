@@ -702,14 +702,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432238837372844384}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!114 &4777162314025189233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _currentHealth: 0
   _isDead: 0
   _onTakeDamage:
     m_PersistentCalls:
@@ -765,7 +766,7 @@ MonoBehaviour:
   animatorSystem: {fileID: 9210640963211972069}
   movementSpeed: 10
   turnSpeed: 10
-  jumpPower: 500
+  jumpPower: 5000
   _velocityUpdateDelayTime: 0.5
   _animationLerpSpeed: 3
 --- !u!114 &7201964570304513179

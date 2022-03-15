@@ -9,6 +9,9 @@ public class Enemy_Attack : MonoBehaviour
 {
     #region Variables
 
+    [Header("Reference")]
+    [SerializeField] BoxCollider _hitBox;
+
     [Header("Properties")]
     [SerializeField] float _detectionRadius = 5f;
     [SerializeField] LayerMask _targetMask = new LayerMask();
@@ -17,14 +20,18 @@ public class Enemy_Attack : MonoBehaviour
 
     [SerializeField] float _offsetAttackRange = 3f;
 
-    [SerializeField] public GameObject _lockOnTarget;
+    public GameObject _lockOnTarget;
 
     Rigidbody _rigidbody;
 
     [Header("Events")]
     [SerializeField] UnityEvent _onAttack;
 
+    [Header("Debug")]
+    [SerializeField] bool _drawHurtBoxGizmos = true;
+
     #endregion
+
 
     #region Awake
 
@@ -36,6 +43,12 @@ public class Enemy_Attack : MonoBehaviour
     #endregion
 
     #region Methods
+
+    public void _SetHitBoxActive(bool _isActive)
+    {
+        _hitBox.enabled = _isActive;
+    }
+
     private void Update()
     {
         if (_lockOnTarget == null) { return; }
@@ -143,6 +156,20 @@ public class Enemy_Attack : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, _GetOffsetAttackRange());
+
+
+        Gizmos.color = Color.red;
+        Gizmos.matrix = _hitBox.transform.localToWorldMatrix;
+
+        if (!_drawHurtBoxGizmos) { return; }
+        if (!_hitBox.enabled) { return; }
+
+        Gizmos.DrawCube(Vector3.zero, _hitBox.size);
+    }
+
+    private void OnDrawGizmos()
+    {
+        
     }
 
     #endregion
