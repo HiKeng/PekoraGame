@@ -84,6 +84,8 @@ public class Enemy_Attack : MonoBehaviour
 
         _rigidbody.velocity = Vector3.zero;
 
+        GetComponent<LookAtPlayer>()._LookAtPlayer();
+
         StartCoroutine(_AttackCoolDownCount(_attackInterval));
 
         _onAttack.Invoke();
