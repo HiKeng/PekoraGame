@@ -153,6 +153,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &247003800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247003801}
+  - component: {fileID: 247003802}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &247003801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247003800}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8767125, y: 0.7456444, z: -0.95904934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &247003802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247003800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864ba899ba07a1f4f9fbc2f354b93e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &288888778
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,6 +2297,38 @@ PrefabInstance:
     - target: {fileID: 1091391361410905644, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242948155432452663, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _onDead.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242948155432452663, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _onDead.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242948155432452663, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _onDead.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 247003802}
+    - target: {fileID: 3242948155432452663, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _onDead.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242948155432452663, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _onDead.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: _RestartSceneWithDelay
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242948155432452663, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _onDead.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: Scene_Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242948155432452663, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _onDead.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_FloatArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242948155432452663, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: _onDead.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4534726945288997690, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: m_AnchorMax.x
