@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class UnitHealth : MonoBehaviour
@@ -9,6 +10,12 @@ public class UnitHealth : MonoBehaviour
     [SerializeField] float _currentHealth;
 
     [SerializeField] bool _isDead = false;
+
+    [Header("UI")]
+    [SerializeField] Slider _healthUI;
+
+    [Header("Events")]
+    [SerializeField] bool _useDebugInput = false;
 
     [Header("Events")]
     public  UnityEvent _onTakeDamage;
@@ -21,10 +28,15 @@ public class UnitHealth : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        if(_useDebugInput)
         {
-            _TakeDamage(50);
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                _TakeDamage(20);
+            }
         }
+        
+        _HealthUI_UpdateValue();
     }
 
     bool _isDeadCheck()
@@ -58,5 +70,11 @@ public class UnitHealth : MonoBehaviour
     {
         gameObject.SetActive(false);
         _onDead.Invoke();
+    }
+
+    public virtual void _HealthUI_UpdateValue()
+    {
+        if(_healthUI == null) { return; }
+        _healthUI.value = _currentHealth / _maxHealth;
     }
 }

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : UnitHealth
+public class PlayerHealth : UnitHealth
 {
     public override void _Dead()
     {
-        if(GetComponent<Animator>().GetBool("isTriggeredDead")) { return; }
+        if (GetComponent<Animator>().GetBool("isTriggeredDead")) { return; }
 
         _HealthUI_UpdateValue();
 
