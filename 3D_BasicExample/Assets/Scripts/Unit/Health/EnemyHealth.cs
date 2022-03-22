@@ -11,6 +11,8 @@ public class EnemyHealth : UnitHealth
         GetComponent<Animator>().SetTrigger("Dead");
         GetComponent<Animator>().SetBool("isDead", true);
 
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<CapsuleCollider>().isTrigger = true;
         _onDead.Invoke();
     }
 }

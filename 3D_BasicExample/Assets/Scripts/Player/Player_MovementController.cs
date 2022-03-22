@@ -111,7 +111,7 @@ public class Player_MovementController : MonoBehaviour
 
     private void Update_Attacking()
     {
-        if(Input.GetButtonDown("Fire1") == true) // Fire1 is Left mouse click.
+        if(Input.GetKeyDown(KeyCode.Mouse0)) // Fire1 is Left mouse click.
         {
             if(onAttacking == false)
             {

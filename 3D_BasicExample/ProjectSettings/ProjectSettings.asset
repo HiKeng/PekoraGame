@@ -591,7 +591,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: INVECTOR_BASIC;USE_CINEMACHINE;USE_TIMELINE;TMP_PRESENT;USE_TWINE;AMPLIFY_SHADER_EDITOR
+    1: INVECTOR_BASIC;USE_CINEMACHINE;USE_TIMELINE;TMP_PRESENT;USE_TWINE;AMPLIFY_SHADER_EDITOR;INVECTOR_MELEE;INVECTOR_SHOOTER
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
