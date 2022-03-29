@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 6225613897947329582}
   - component: {fileID: 5393885982900806969}
   m_Layer: 8
-  m_Name: BasicAI_Humanoid
+  m_Name: BasicAI_Melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

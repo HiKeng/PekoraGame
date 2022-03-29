@@ -32,9 +32,7 @@ public class Enemy_Attack : MonoBehaviour
 
     #endregion
 
-
     #region Awake
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -43,7 +41,6 @@ public class Enemy_Attack : MonoBehaviour
     #endregion
 
     #region Methods
-
     public void _SetHitBoxActive(bool _isActive)
     {
         _hitBox.enabled = _isActive;
@@ -97,6 +94,8 @@ public class Enemy_Attack : MonoBehaviour
 
         GetComponent<LookAtPlayer>()._LookAtPlayer();
 
+        GetComponent<Animator>().SetTrigger("Attack");
+
         StartCoroutine(_AttackCoolDownCount(_attackInterval));
 
         _onAttack.Invoke();
@@ -124,7 +123,6 @@ public class Enemy_Attack : MonoBehaviour
         {
             _detectTarget(other.gameObject);
 
-            GetComponent<Animator>().SetTrigger("Attack");
         }
     }
 
@@ -135,8 +133,6 @@ public class Enemy_Attack : MonoBehaviour
             if (_lockOnTarget == null)
             {
                 _detectTarget(other.gameObject);
-
-                GetComponent<Animator>().SetTrigger("Attack");
             }
         }
     }
