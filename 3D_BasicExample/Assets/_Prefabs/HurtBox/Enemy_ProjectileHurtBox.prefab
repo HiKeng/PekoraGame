@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5148927629598543175}
   - component: {fileID: 5148927629598543176}
   - component: {fileID: 5148927629598543177}
+  - component: {fileID: 730595238592211722}
   m_Layer: 0
   m_Name: Enemy_ProjectileHurtBox
   m_TagString: Untagged
@@ -64,5 +65,24 @@ MonoBehaviour:
   _alreadyHitList: []
   _showGizmos: 0
   _onHit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &730595238592211722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148927629598543178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd39039863a63e48ad1e9260ed01bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openCloseEvents: 0
+  openCloseWindow: 0
+  selectedToolbar: 0
+  delay: 0.5
+  onDestroy:
     m_PersistentCalls:
       m_Calls: []

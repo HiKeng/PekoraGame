@@ -12,6 +12,8 @@ public class Enemy_AbilitiesManager : MonoBehaviour
         [Header("Properties")]
         public string _name;
         public int _ID;
+        public GameObject _prefab;
+        public Vector3 _spawnOffset;
 
         [Header("Cooldown")]
         public float _cooldownDuration = 2f;
@@ -117,6 +119,13 @@ public class Enemy_AbilitiesManager : MonoBehaviour
         {
             _DecreaseLimitedAmount(_abilityID);
         }
+    }
+
+    public void _GenerateAbilityByID(int _abilityID)
+    {
+        GameObject _newAbility = Instantiate(_GetAbilityByID(_abilityID)._prefab, 
+                                             transform.position + _GetAbilityByID(_abilityID)._spawnOffset,
+                                             Quaternion.identity);
     }
 
     #endregion

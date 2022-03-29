@@ -91,7 +91,7 @@ MonoBehaviour:
   _abilityPrefab: {fileID: 2413688960570094730, guid: 6b1502167639e634487b676b437f6757, type: 3}
   _ID: 1
   _spawnDelay: 0.1
-  _offsetPosition: {x: 0, y: 0, z: 0}
+  _offsetPosition: {x: 0.5, y: 0.5, z: 0}
   _isFreezePosition: 0
   _setFreezePosition: 0
   _isStartCountCooldown: 1
@@ -676,7 +676,6 @@ AnimatorState:
   m_Transitions:
   - {fileID: -3462284093021112361}
   m_StateMachineBehaviours:
-  - {fileID: 6164707121231737484}
   - {fileID: -7197055482876095328}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -711,19 +710,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 0}
---- !u!114 &6164707121231737484
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f223dbf5c9c4b5f46a7dbfa1a717fc27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventTriggers: []
 --- !u!1102 &7074488653459217117
 AnimatorState:
   serializedVersion: 6
@@ -901,6 +887,6 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 350, y: 40, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 680, y: 110, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 4080236137015831725}
