@@ -184,4 +184,9 @@ public class Player_Camera : MonoBehaviour
             targetCamera.transform.position += cameraForwardNoY * distanceDifferntNoY * 1.1f;
         }
     }
+
+    public void UnfreezeMouse()
+    {
+        _isFreeze = false;
+    }
 }

@@ -949,10 +949,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7481353784925272961, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: menuButtonController
+      value: 
+      objectReference: {fileID: 546778630}
     - target: {fileID: 8851272783670981903, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
       propertyPath: thisIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8851272783670981903, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: menuButtonController
+      value: 
+      objectReference: {fileID: 546778630}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
 --- !u!224 &1521696608 stripped
@@ -1061,6 +1069,34 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 162068681252163028, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162068681252163028, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162068681252163028, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 263900866}
+    - target: {fileID: 162068681252163028, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 162068681252163028, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: _ExitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 162068681252163028, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene_Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 162068681252163028, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 162068681252163029, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1161,10 +1197,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7481353784925272961, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: menuButtonController
+      value: 
+      objectReference: {fileID: 546778630}
     - target: {fileID: 8851272783670981903, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
       propertyPath: thisIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8851272783670981903, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: menuButtonController
+      value: 
+      objectReference: {fileID: 546778630}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
 --- !u!224 &1652110800 stripped
@@ -1335,5 +1379,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7481353784925272961, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: menuButtonController
+      value: 
+      objectReference: {fileID: 546778630}
+    - target: {fileID: 8851272783670981903, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}
+      propertyPath: menuButtonController
+      value: 
+      objectReference: {fileID: 546778630}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da5d82539cd610a4d9d97ea70b8a67b2, type: 3}

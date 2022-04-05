@@ -12,7 +12,6 @@ public class MenuButton : MonoBehaviour
 
     private void Awake()
     {
-        menuButtonController = transform.root.GetComponent<MenuButtonController>();
         animatorFunctions = GetComponent<AnimatorFunctions>();
         animator = GetComponent<Animator>();
     }

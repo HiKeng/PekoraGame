@@ -9,7 +9,6 @@ public class AnimatorFunctions : MonoBehaviour
 
     private void Awake()
     {
-        menuButtonController = transform.root.GetComponent<MenuButtonController>();
     }
 
     void PlaySound(AudioClip sound)
