@@ -91,7 +91,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DisolveAmount: 0.451
-    - _DissolveAmount: 0.146
+    - _DissolveAmount: 0
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
