@@ -5,13 +5,17 @@ using UnityEngine.UI;
 
 public class MenuButton : MonoBehaviour
 {
-    [SerializeField] MenuButtonController menuButtonController;
-    [SerializeField] Animator animator;
-    [SerializeField] AnimatorFunctions animatorFunctions;
-    [SerializeField] int thisIndex;
+    [Header("UI Index Order")]
+    [SerializeField] int thisIndex; // Start from 0
+
+    [Header("References")]
+    MenuButtonController menuButtonController;
+    Animator animator;
+    AnimatorFunctions animatorFunctions;
 
     private void Awake()
     {
+        menuButtonController = transform.root.GetComponent<MenuButtonController>();
         animatorFunctions = GetComponent<AnimatorFunctions>();
         animator = GetComponent<Animator>();
     }
@@ -42,5 +46,16 @@ public class MenuButton : MonoBehaviour
     void _playButtonEvent()
     {
         GetComponent<Button>().onClick.Invoke();
+    }
+
+    // To change index when mouse on a button.
+    public void _MouseOnThisButton()
+    {
+        menuButtonController._MouseOnChooseThisButton(this);
+    }
+
+    public int _GetIndex()
+    {
+        return thisIndex;
     }
 }

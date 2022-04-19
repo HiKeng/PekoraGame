@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 3131229007737493965}
   - component: {fileID: 8851272783670981903}
   - component: {fileID: 7481353784925272961}
+  - component: {fileID: 5143026283835567596}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -197,15 +198,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.4745098}
+  m_Color: {r: 0.6886792, g: 0.3672021, b: 0.15202916, a: 0.91764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 988964b598abd02448d59d0b468636f9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -289,9 +290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591c6271b7241ec409c4d94af9a5e723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuButtonController: {fileID: 0}
-  animator: {fileID: 0}
-  animatorFunctions: {fileID: 0}
   thisIndex: 0
 --- !u!114 &7481353784925272961
 MonoBehaviour:
@@ -305,5 +303,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00e07c10fe2ca64abecb634fcdc2dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuButtonController: {fileID: 0}
   disableOnce: 0
+--- !u!114 &5143026283835567596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162068681252163030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8851272783670981903}
+          m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
+          m_MethodName: _MouseOnThisButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: isSelected
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: DebugLogPrint, Assembly-CSharp
+          m_MethodName: _PrintThisWithObjectName
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: On This Button
+            m_BoolArgument: 0
+          m_CallState: 2

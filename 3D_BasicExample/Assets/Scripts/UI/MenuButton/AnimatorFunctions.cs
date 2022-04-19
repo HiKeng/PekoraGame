@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class AnimatorFunctions : MonoBehaviour
 {
-    [SerializeField] MenuButtonController menuButtonController;
     public bool disableOnce;
+
+    [Header("References")]
+    MenuButtonController menuButtonController;
 
     private void Awake()
     {
+        menuButtonController = transform.root.GetComponent<MenuButtonController>();
     }
 
     void PlaySound(AudioClip sound)

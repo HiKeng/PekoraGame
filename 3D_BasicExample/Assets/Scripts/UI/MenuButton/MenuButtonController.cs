@@ -1,13 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MenuButtonController : MonoBehaviour
 {
+    [Header("UI Index")]
     public int index;
-    [SerializeField] bool keyDown;
     [SerializeField] int maxIndex;
-    public AudioSource audioSource;
+
+    [Header("Pages")]
+    [SerializeField] List<GameObject> _pageList;
+
+    [Header("Key Down")]
+    [SerializeField] bool keyDown;
+
+    [Header("Audio")]
+    [HideInInspector] public AudioSource audioSource;
+
+    [Header("Events")]
+    [SerializeField] UnityEvent _OnChangeUIChoice;
 
     void Start()
     {
@@ -44,11 +56,28 @@ public class MenuButtonController : MonoBehaviour
                 }
 
                 keyDown = true;
+                _OnChangeUIChoice.Invoke();
             }
         }
         else
         {
             keyDown = false;
         }
+    }
+
+    // To change index when mouse on a button.
+    public void _MouseOnChooseThisButton(MenuButton _button)
+    {
+        index = _button._GetIndex();
+    }
+
+    public void _ChangeToOtherPage(GameObject _page)
+    {
+        for (int i = 0; i < _pageList.Count; i++)
+        {
+            _pageList[i].SetActive(_pageList[i] == _page ? true : false);
+        }
+
+        index = 0;
     }
 }
