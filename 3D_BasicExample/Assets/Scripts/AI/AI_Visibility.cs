@@ -6,12 +6,16 @@ public class AI_Visibility : MonoBehaviour
 {
     public AI_Behavior aiBehavior;
 
+    [Header("Debug")]
+    [SerializeField] bool _DebugMessage = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") == true)
         {
             aiBehavior.targetToFollow = other.gameObject;
-            print("Found Player");
+
+            if(_DebugMessage) { print("Found Player"); }
         }
     }
 
@@ -22,7 +26,8 @@ public class AI_Visibility : MonoBehaviour
             aiBehavior.targetToFollow = null;
             aiBehavior.onMoving = false;
             aiBehavior.navigationAgent.SetDestination(gameObject.transform.position); // End Moving
-            print("Lost Sight Player");
+
+            if (_DebugMessage) { print("Lost Sight Player"); }
         }
     }
 }

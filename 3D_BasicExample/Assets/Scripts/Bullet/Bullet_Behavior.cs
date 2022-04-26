@@ -26,6 +26,9 @@ public class Bullet_Behavior : MonoBehaviour
 
     [SerializeField] float _force = 200;
 
+    [Header("Debug")]
+    [SerializeField] bool _DebugMessage = false;
+
 
     //public int _bulletBehaviorIndex;
 
@@ -54,7 +57,8 @@ public class Bullet_Behavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             transform.position = _playerPosition.gameObject.transform.position;
-            Debug.Log("Player = " + _playerPosition.gameObject);
+
+            if(_DebugMessage) { Debug.Log("Player = " + _playerPosition.gameObject); }
         }
     }
 

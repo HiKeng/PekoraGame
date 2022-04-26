@@ -14,8 +14,9 @@ public class UnitHealth : MonoBehaviour
     [Header("UI")]
     [SerializeField] Slider _healthUI;
 
-    [Header("Events")]
+    [Header("Debug")]
     [SerializeField] bool _useDebugInput = false;
+    [SerializeField] bool _useDebugPrint = false;
 
     [Header("Events")]
     public  UnityEvent _onTakeDamage;
@@ -56,7 +57,8 @@ public class UnitHealth : MonoBehaviour
         _currentHealth -= _damage;
         _onTakeDamage.Invoke();
 
-        Debug.Log(this.name + " | Current Health = " + _currentHealth);
+        if(_useDebugPrint) { Debug.Log(this.name + " | Current Health = " + _currentHealth); }
+        
 
         _isDeadCheck();
     }

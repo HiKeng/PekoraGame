@@ -9,13 +9,17 @@ public class MenuButton : MonoBehaviour
     [SerializeField] int thisIndex; // Start from 0
 
     [Header("References")]
-    MenuButtonController menuButtonController;
+    [SerializeField] MenuButtonController menuButtonController;
     Animator animator;
     AnimatorFunctions animatorFunctions;
 
     private void Awake()
     {
-        menuButtonController = transform.root.GetComponent<MenuButtonController>();
+        if(menuButtonController == null)
+        {
+            menuButtonController = transform.root.GetComponent<MenuButtonController>();
+        }
+
         animatorFunctions = GetComponent<AnimatorFunctions>();
         animator = GetComponent<Animator>();
     }

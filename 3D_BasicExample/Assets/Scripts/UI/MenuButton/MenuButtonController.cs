@@ -80,4 +80,10 @@ public class MenuButtonController : MonoBehaviour
 
         index = 0;
     }
+
+    public void _SetNewMaxIndex(int _newMaxIndex)
+    {
+        maxIndex = _newMaxIndex - 1;
+        index = 0;
+    }
 }

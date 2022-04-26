@@ -15,6 +15,7 @@ public class HurtBox : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] bool _showGizmos = false;
+    [SerializeField] bool _showDebug = false;
 
     [Header("Events")]
     public UnityEvent _onHit;
@@ -50,7 +51,7 @@ public class HurtBox : MonoBehaviour
     {
         if (other.GetComponent<UnitHealth>() != null)
         {
-            Debug.Log("Hit with: " + other.name);
+            if(_showDebug) { Debug.Log("Hit with: " + other.name); }
 
             if (IsInLayerMask(other.gameObject, _damageLayer))
             {

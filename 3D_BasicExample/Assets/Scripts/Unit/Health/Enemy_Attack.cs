@@ -29,6 +29,7 @@ public class Enemy_Attack : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] bool _drawHurtBoxGizmos = true;
+    [SerializeField] bool _debugMessage = false;
 
     #endregion
 
@@ -88,7 +89,7 @@ public class Enemy_Attack : MonoBehaviour
 
         //////////////// Attack here
         ///
-        Debug.Log("Attack");
+        if(_debugMessage) { Debug.Log("Attack"); }
 
         _rigidbody.velocity = Vector3.zero;
 
