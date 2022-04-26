@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
+    [Header("Debug")]
+    [SerializeField] bool _UseDebugButton = false;
     void Start()
     {
         
@@ -12,9 +14,12 @@ public class Scene_Manager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        if(_UseDebugButton)
         {
-            _RestartScene();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                _RestartScene();
+            }
         }
     }
 
@@ -44,5 +49,23 @@ public class Scene_Manager : MonoBehaviour
     {
         Debug.Log("Exit Game");
         Application.Quit();
+    }
+
+    public void _AsynchronouslyLoadScene(string _sceneName)
+    {
+        StartCoroutine(_LoadAsynchronously(_sceneName));
+    }
+
+    IEnumerator _LoadAsynchronously(string _sceneName)
+    {
+        AsyncOperation _operation = SceneManager.LoadSceneAsync(_sceneName);
+
+        while(!_operation.isDone)
+        {
+            float progress = Mathf.Clamp01(_operation.progress / 0.9f);
+            Debug.Log(progress);
+
+            yield return null;
+        }
     }
 }
