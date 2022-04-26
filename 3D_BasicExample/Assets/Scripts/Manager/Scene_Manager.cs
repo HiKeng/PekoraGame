@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
+    [Header("UI")]
+    [SerializeField] Animator _transitionAnimation;
+
     [Header("Debug")]
     [SerializeField] bool _UseDebugButton = false;
-    void Start()
+    AsyncOperation _operation;
+
+    private void Awake()
     {
-        
     }
 
     void Update()
@@ -58,12 +62,22 @@ public class Scene_Manager : MonoBehaviour
 
     IEnumerator _LoadAsynchronously(string _sceneName)
     {
-        AsyncOperation _operation = SceneManager.LoadSceneAsync(_sceneName);
+        _operation = SceneManager.LoadSceneAsync(_sceneName);
+        _operation.allowSceneActivation = false;
 
-        while(!_operation.isDone)
+        _transitionAnimation.SetTrigger("FadeIn");
+
+        while (!_operation.isDone)
         {
             float progress = Mathf.Clamp01(_operation.progress / 0.9f);
             Debug.Log(progress);
+
+            if(progress == 1)
+            {
+                yield return new WaitForSeconds(2f);
+                _operation.allowSceneActivation = true;
+                _transitionAnimation.SetTrigger("FadeOut");
+            }
 
             yield return null;
         }
