@@ -26,7 +26,7 @@ public class MenuButton : MonoBehaviour
         {
             animator.SetBool("isSelected", true);
 
-            if(Input.GetAxis("Submit") == 1)
+            if(Input.GetButtonDown("Submit"))
             {
                 animator.SetBool("isPressed", true);
                 _playButtonEvent();
