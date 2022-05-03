@@ -261,7 +261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4181117782096260327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4430957, y: 0.98, z: 1.964188}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7708685403301544111}
@@ -283,7 +283,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: fdaecdd585f2cc14ea9536230e482710, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -385,6 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiBehavior: {fileID: 4181117782096260329}
+  _DebugMessage: 0
 --- !u!114 &4181117782096260335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +403,7 @@ MonoBehaviour:
   _isDead: 0
   _healthUI: {fileID: 847132051577363334}
   _useDebugInput: 0
+  _useDebugPrint: 0
   _onTakeDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -487,7 +489,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4181117782096260327}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2de29a1fed928db43b5079cc85b27d0e, type: 3}
   m_Name: 
@@ -557,6 +559,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _drawHurtBoxGizmos: 1
+  _debugMessage: 0
 --- !u!114 &1731310883566009023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +748,7 @@ MonoBehaviour:
     m_Bits: 256
   _alreadyHitList: []
   _showGizmos: 0
+  _showDebug: 0
   _onHit:
     m_PersistentCalls:
       m_Calls: []

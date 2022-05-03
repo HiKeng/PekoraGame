@@ -33,12 +33,15 @@ public class AI_Behavior : MonoBehaviour
     {
         if(targetToFollow == null)
         {
-            Patrol_Behavior();
+            //Patrol_Behavior();
+            _moveForward();
         }
         else
         {
             FollowPlayer_Behavior();
         }
+
+        _updateAnimation();
     }
 
     void Patrol_Behavior()
@@ -70,6 +73,42 @@ public class AI_Behavior : MonoBehaviour
         }
     }
 
+    void _moveForward()
+    {
+        Vector3 currentLocation = gameObject.transform.position;
+        Vector3 navigationDestination = navigationAgent.destination;
+
+        if (onMoving == true
+            && Vector3.Distance(currentLocation, navigationDestination) <= navigationAgent.stoppingDistance)
+        {
+            onMoving = false;
+            onDelayAfterMove = true;
+        }
+
+        if (onDelayAfterMove == true)
+        {
+            delayCounter += Time.deltaTime;
+
+            if (delayCounter >= delayAfterMove)
+            {
+                delayCounter = 0.0f;
+                onDelayAfterMove = false;
+            }
+        }
+
+        if (onMoving == false && onDelayAfterMove == false)
+        {
+            AIMove_Forward();
+        }
+    }
+    void AIMove_Forward()
+    {
+        onMoving = true;
+        Vector3 targetPatrolPos = transform.forward * 3;
+
+        navigationAgent.SetDestination(targetPatrolPos);
+    }
+
     void AIMove_Patrol()
     {
         onMoving = true;
@@ -86,5 +125,17 @@ public class AI_Behavior : MonoBehaviour
         onDelayAfterMove = false;
         delayCounter = 0.0f;
         navigationAgent.SetDestination(targetToFollow.gameObject.transform.position);
+    }
+
+    void _updateAnimation()
+    {
+        if(onMoving)
+        {
+            GetComponent<Animator>().SetFloat("VelocityLerp", 1f);
+        }
+        else
+        {
+            GetComponent<Animator>().SetFloat("VelocityLerp", 0);
+        }
     }
 }

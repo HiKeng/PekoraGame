@@ -21,6 +21,5 @@ public abstract class SingletonBase<T> : MonoBehaviour
         //}
 
         Instance = this.GetComponent<T>();
-
     }
 }

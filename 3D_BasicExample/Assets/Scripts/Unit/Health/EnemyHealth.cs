@@ -15,6 +15,14 @@ public class EnemyHealth : UnitHealth
 
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<CapsuleCollider>().isTrigger = true;
+
+        _RemoveFromCurrentActiveList();
         _onDead.Invoke();
+    }
+
+    // When enemy is dead, it will be removed from current active list.
+    public void _RemoveFromCurrentActiveList()
+    {
+        EnemyWaveSpawner.Instance._RemoveEnemyFromCurrentActiveList(this);
     }
 }

@@ -115,7 +115,6 @@ public class Player_MovementController : MonoBehaviour
         {
             if(onAttacking == false)
             {
-                Debug.Log("Attack");
                 Start_AttackingState();
                 animatorSystem.SetTrigger("DoAttacking");
 
