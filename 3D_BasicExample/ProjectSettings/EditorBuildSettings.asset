@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Class/MobileInput.unity
     guid: 477d046d3fcd80442aedf52f788cf764
+  - enabled: 1
+    path: Assets/_Scenes/01_CoreDontDestory/CoreDontDestory.unity
+    guid: e10b4bffec6269f468bd1ece640462e8
   m_configObjects: {}
