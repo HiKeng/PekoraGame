@@ -17,4 +17,9 @@ public class PlayerHealth : UnitHealth
         GetComponent<CapsuleCollider>().isTrigger = true;
         _onDead.Invoke();
     }
+
+    public void _SetDead()
+    {
+        _currentHealth = 0;
+    }
 }

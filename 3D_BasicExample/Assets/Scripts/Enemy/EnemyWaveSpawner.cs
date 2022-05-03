@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class EnemyWaveSpawner : SingletonBase<EnemyWaveSpawner>
 {
@@ -32,20 +33,28 @@ public class EnemyWaveSpawner : SingletonBase<EnemyWaveSpawner>
 
     [SerializeField] List<EnemyHealth> _currentActiveEnemy;
 
-    [SerializeField] int _currentWaveID = 0;
+    int _currentWaveID = 0;
 
+    [Header("UI")]
+    [SerializeField] TextMeshProUGUI _eliminatedEnemyCount;
+    [SerializeField] TextMeshProUGUI _totalEnemyAmount;
+    int _eliminateEnemyCounter = 0;
+    
     [Header("Events")]
     [SerializeField] UnityEvent _onSpawnWave;
     [SerializeField] UnityEvent _onFinishedAllWave;
 
     #endregion
 
-    #region Methods
-
     void Start()
     {
         _StartSpawnEnemyWave(_currentWaveID); // Spawn first wave on start.
+
+        _SetUpUI(); // Setup total enemy amount.
     }
+
+
+    #region Spawn Methods
 
     void _SpawnNextEnemyWave()
     {
@@ -107,6 +116,39 @@ public class EnemyWaveSpawner : SingletonBase<EnemyWaveSpawner>
             }
         }
         // -----------------------------------------------------------------------------------------------------------------
+
+        _UpdateEliminatedEnemyCount(); // Count eliminated enemy
+    }
+
+    int _GetTotalEnemyAmount()
+    {
+        int _enemyCount = 0;
+
+        for (int i = 0; i < _enemyWave.Count; i++)
+        {
+            for (int j = 0; j < _enemyWave[i]._enemyInWave.Count; j++)
+            {
+                _enemyCount++;
+            }
+        }
+
+        return _enemyCount;
+    }
+
+    #endregion
+
+    #region UI Methods
+
+    void _SetUpUI()
+    {
+        _eliminatedEnemyCount.text = _eliminateEnemyCounter.ToString();
+        _totalEnemyAmount.text = _GetTotalEnemyAmount().ToString();
+    }
+
+    void _UpdateEliminatedEnemyCount()
+    {
+        _eliminateEnemyCounter++;
+        _eliminatedEnemyCount.text = _eliminateEnemyCounter.ToString();
     }
 
     #endregion
