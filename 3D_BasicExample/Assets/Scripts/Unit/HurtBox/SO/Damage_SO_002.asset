@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8416884ba98de44a0811e2d0f930aa, type: 3}
   m_Name: Damage_SO_002
   m_EditorClassIdentifier: 
-  _damage: 2
+  _damage: 7
   _Senter: {fileID: 0}
   _Receiver: {fileID: 0}

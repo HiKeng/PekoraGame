@@ -20,6 +20,11 @@ public class EnemyHealth : UnitHealth
         _onDead.Invoke();
     }
 
+    public void _GoDead()
+    {
+        _TakeDamage(_currentHealth);
+    }
+
     // When enemy is dead, it will be removed from current active list.
     public void _RemoveFromCurrentActiveList()
     {

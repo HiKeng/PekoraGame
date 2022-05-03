@@ -53,6 +53,16 @@ public class EnemyWaveSpawner : SingletonBase<EnemyWaveSpawner>
         _SetUpUI(); // Setup total enemy amount.
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            foreach (EnemyHealth enemy in _currentActiveEnemy)
+            {
+                enemy._GoDead();
+            }
+        }
+    }
 
     #region Spawn Methods
 

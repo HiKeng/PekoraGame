@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : UnitHealth
 {
+    [SerializeField] UnityEvent _onCompleted;
+
     public override void _Dead()
     {
         if (GetComponent<Animator>().GetBool("isTriggeredDead")) { return; }
@@ -21,5 +24,10 @@ public class PlayerHealth : UnitHealth
     public void _SetDead()
     {
         _currentHealth = 0;
+    }
+
+    public void _StageCompleted()
+    {
+        _onCompleted.Invoke();
     }
 }
