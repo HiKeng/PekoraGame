@@ -991,7 +991,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _currentHealth: 0
   _isDead: 0
   _healthUI: {fileID: 847132051577363334}
   _useDebugInput: 0
@@ -1494,9 +1493,9 @@ MonoBehaviour:
   _hurtBoxSO: {fileID: 11400000, guid: e5a64982e36005d4298bd54db703ebfb, type: 2}
   _damageLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   _alreadyHitList: []
-  _showGizmos: 0
+  _showGizmos: 1
   _showDebug: 0
   _onHit:
     m_PersistentCalls:
