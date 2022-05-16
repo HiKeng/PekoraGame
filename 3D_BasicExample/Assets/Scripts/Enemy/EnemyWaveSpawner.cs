@@ -91,6 +91,10 @@ public class EnemyWaveSpawner : SingletonBase<EnemyWaveSpawner>
 
     void HandleSpawnNewEnemyWave()
     {
+        // Start spawn enemy wave
+        // Begin from spawning 'Spawn VFX'
+        // Then spawn 'Enemy Prefab' after a short delay
+
         for (int i = 0; i < _enemyWave[_currentWaveID]._enemyInWave.Count; i++)
         {
             // Spawn VFX before actually spawn enemy.
@@ -108,6 +112,7 @@ public class EnemyWaveSpawner : SingletonBase<EnemyWaveSpawner>
         _onSpawnWave.Invoke();
     }
 
+    // Actually spawn enemy prefab.
     IEnumerator _StartSpawnEachEnemy(GameObject _enemyToSpawn, Vector3 _spawnPosition)
     {
         yield return new WaitForSeconds(_delaySpawnForEachEnemy);

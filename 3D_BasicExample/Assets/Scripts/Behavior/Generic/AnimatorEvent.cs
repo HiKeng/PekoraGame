@@ -15,6 +15,7 @@ public class AnimatorEvent : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        // Set attacking state back to false after reached the desired time.
         if(stateInfo.normalizedTime >= _triggerTime && !_isTriggered)
         {
             animator.transform.root.GetComponent<Player_MovementController>().End_AttackingState();

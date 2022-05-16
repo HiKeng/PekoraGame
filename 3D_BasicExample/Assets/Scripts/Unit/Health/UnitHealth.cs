@@ -19,7 +19,7 @@ public class UnitHealth : MonoBehaviour
     [SerializeField] bool _useDebugPrint = false;
 
     [Header("Events")]
-    public  UnityEvent _onTakeDamage;
+    public UnityEvent _onTakeDamage;
     public UnityEvent _onDead;
 
     protected virtual void Start()
@@ -29,6 +29,7 @@ public class UnitHealth : MonoBehaviour
 
     void Update()
     {
+        // For Debugging
         if(_useDebugInput)
         {
             if (Input.GetKeyDown(KeyCode.L))
@@ -37,6 +38,7 @@ public class UnitHealth : MonoBehaviour
             }
         }
         
+        // For update health UI Value
         _HealthUI_UpdateValue();
     }
 
@@ -58,7 +60,6 @@ public class UnitHealth : MonoBehaviour
         _onTakeDamage.Invoke();
 
         if(_useDebugPrint) { Debug.Log(this.name + " | Current Health = " + _currentHealth); }
-        
 
         _isDeadCheck();
     }

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
+    #region Variables
+
     [Header("UI")]
     [SerializeField] Animator _transitionAnimation;
 
@@ -12,12 +14,13 @@ public class Scene_Manager : MonoBehaviour
     [SerializeField] bool _UseDebugButton = false;
     AsyncOperation _operation;
 
-    private void Awake()
-    {
-    }
+    #endregion
+
+    #region Methods
 
     void Update()
     {
+        // For Debugging
         if(_UseDebugButton)
         {
             if (Input.GetKeyDown(KeyCode.R))
@@ -82,4 +85,6 @@ public class Scene_Manager : MonoBehaviour
             yield return null;
         }
     }
+
+    #endregion
 }

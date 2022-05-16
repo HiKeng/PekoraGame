@@ -6,6 +6,8 @@ using TMPro;
 
 public class BuildingCounter : SingletonBase<BuildingCounter>
 {
+    #region Variables
+
     [SerializeField] Transform _buildingGroup;
     [SerializeField] List<BuildingHealth> _buildingList;
 
@@ -15,18 +17,20 @@ public class BuildingCounter : SingletonBase<BuildingCounter>
 
     [SerializeField] UnityEvent _onAllBuildingDestoryed;
 
+    #endregion
+
+    #region Methods
 
     void Start()
     {
+        // Set buildings and add it into list
         _GetBuildingListFromGroup();
+
+        // Set how many buildings is in the scene
         _buildingLeftCounter = _buildingList.Count;
 
+        // Update UI value depends on building count
         _SetUpUI();
-    }
-
-    void Update()
-    {
-        
     }
 
     public void _RemoveEnemyFromCurrentActiveList(BuildingHealth _enemyToRemove)
@@ -60,4 +64,6 @@ public class BuildingCounter : SingletonBase<BuildingCounter>
         _totalBuildingCount.text = _buildingList.Count.ToString();
         _currentBuildingLeftCount.text = _buildingLeftCounter.ToString();
     }
+
+    #endregion
 }
