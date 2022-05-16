@@ -39,7 +39,13 @@ public class EnemyWaveSpawner : SingletonBase<EnemyWaveSpawner>
     [SerializeField] TextMeshProUGUI _eliminatedEnemyCount;
     [SerializeField] TextMeshProUGUI _totalEnemyAmount;
     int _eliminateEnemyCounter = 0;
-    
+
+    [Header("Delay Spawn")]
+    [SerializeField] float _delaySpawnForEachEnemy = 1f;
+
+    [Header("VFX")]
+    [SerializeField] GameObject _spawnVFX;
+
     [Header("Events")]
     [SerializeField] UnityEvent _onSpawnWave;
     [SerializeField] UnityEvent _onFinishedAllWave;
@@ -87,14 +93,27 @@ public class EnemyWaveSpawner : SingletonBase<EnemyWaveSpawner>
     {
         for (int i = 0; i < _enemyWave[_currentWaveID]._enemyInWave.Count; i++)
         {
-            GameObject _newEnemy = Instantiate(_enemyWave[_currentWaveID]._enemyInWave[i]._enemyToSpawn.gameObject,
+            // Spawn VFX before actually spawn enemy.
+            GameObject _newSpawnVFX = Instantiate(_spawnVFX,
                                                _spawnPointList[_enemyWave[_currentWaveID]._enemyInWave[i]._spawnPointID].position,
                                                transform.rotation);
+            _newSpawnVFX.transform.localScale = new Vector3(2, 2, 2);
 
-            _currentActiveEnemy.Add(_newEnemy.GetComponent<EnemyHealth>());
+            // Actually spawn enemy.
+            StartCoroutine(_StartSpawnEachEnemy(_enemyWave[_currentWaveID]._enemyInWave[i]._enemyToSpawn.gameObject,
+                                                _spawnPointList[_enemyWave[_currentWaveID]._enemyInWave[i]._spawnPointID].position));
+
         }
 
         _onSpawnWave.Invoke();
+    }
+
+    IEnumerator _StartSpawnEachEnemy(GameObject _enemyToSpawn, Vector3 _spawnPosition)
+    {
+        yield return new WaitForSeconds(_delaySpawnForEachEnemy);
+
+        GameObject _newEnemy = Instantiate(_enemyToSpawn, _spawnPosition, transform.rotation);
+        _currentActiveEnemy.Add(_newEnemy.GetComponent<EnemyHealth>());
     }
 
     public void _RemoveEnemyFromCurrentActiveList(EnemyHealth _enemyToRemove)
