@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        _isPause = false;
         Time.timeScale = 1;
     }
     void Update()
@@ -37,7 +38,7 @@ public class PauseMenu : MonoBehaviour
 
     public void _PauseGame()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.00001f;
         _isPause = true;
         _onStartPause.Invoke();
     }
@@ -47,10 +48,5 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         _isPause = false;
         _onEndPause.Invoke();
-    }
-
-    IEnumerator test()
-    {
-        yield return new WaitForSecondsRealtime(3);
     }
 }
