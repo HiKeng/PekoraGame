@@ -271,7 +271,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8eb6de6c6717b03419e6719cfdcdb595, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisIndex: 0
+  menuButtonController: {fileID: 0}
 --- !u!114 &7481353784925272961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableOnce: 0
+  menuButtonController: {fileID: 0}
 --- !u!114 &5143026283835567596
 MonoBehaviour:
   m_ObjectHideFlags: 0

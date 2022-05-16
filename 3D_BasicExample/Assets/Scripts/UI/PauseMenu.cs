@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] bool _isPause = false;
+    public static bool _isPause = false;
+
+    [Header("Events")]
+    [SerializeField] UnityEvent _onStartPause;
+    [SerializeField] UnityEvent _onEndPause;
 
     private void Start()
     {
@@ -12,18 +17,40 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(_isPause)
+            //GameState currentGameState = GameStateManager.Instance.CurrentGameState;
+            //GameState newGameState = currentGameState == GameState.Gameplay ? GameState.Paused : GameState.Gameplay;
+
+            //GameStateManager.Instance.SetState(newGameState);
+
+            if (_isPause)
             {
-                Time.timeScale = 1;
-                _isPause = false;
+                _ResumeGame();
             }
             else
             {
-                Time.timeScale = 0;
-                _isPause = true;
+                _PauseGame();
             }
         }
+    }
+
+    public void _PauseGame()
+    {
+        Time.timeScale = 0;
+        _isPause = true;
+        _onStartPause.Invoke();
+    }
+
+    public void _ResumeGame()
+    {
+        Time.timeScale = 1;
+        _isPause = false;
+        _onEndPause.Invoke();
+    }
+
+    IEnumerator test()
+    {
+        yield return new WaitForSecondsRealtime(3);
     }
 }
