@@ -7105,6 +7105,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4753920948090221404, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5432238837372844384, guid: e107716ad18f3b046bb28617e1f36860, type: 3}
       propertyPath: m_Name
       value: Pekora_PlayerController
@@ -9338,6 +9342,10 @@ PrefabInstance:
     - target: {fileID: 830690896989343894, guid: abc0eb1e2d04d4549877d4a521890dd1, type: 3}
       propertyPath: m_Name
       value: SceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 830690896989343894, guid: abc0eb1e2d04d4549877d4a521890dd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 830690896989343895, guid: abc0eb1e2d04d4549877d4a521890dd1, type: 3}
       propertyPath: m_RootOrder
